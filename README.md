@@ -16,7 +16,7 @@ My JavaScript code was inspired by Wes Bos's JavaScript 30's <a href="https://gi
 <li>Added an event listener function for 'on click' event to play the note once a key has been clicked on</li>
 <li>Created "whitePlaying" and "blackPlaying" classes for keys that had been pushed (via the keyboard), and added the corresponding CSS</li>
 <li>Created a function to remove this "whitePlaying"/"blackPlaying" classes and corresponding styling, upon 'key up' event.</li>
-<li>Added a description test and a notes chart image.</li>
+<li>Added a description test and a notes chart image.</li></ul>
 
 <h2>Tech used</h2>
 
