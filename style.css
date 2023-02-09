@@ -1,6 +1,6 @@
-* {
-  box-sizing:border-box
-}
+/* *, *:before, *:after {
+  box-sizing: border-box;
+} */
 
 body {
   margin:0;
@@ -9,7 +9,6 @@ body {
 
 h1 {
   font-size: 5rem;
-  padding-top: 1%;
   color:rgba(179, 234, 232, 0.837);
   text-align: center;
   font-family: 'Dancing Script', cursive;
@@ -114,3 +113,47 @@ figcaption {
   font-size: 2rem;
   text-align: center;
 }
+
+#gameRules p {
+  font-family: 'Cherry Swash', cursive;
+  color:rgba(247, 228, 253, 0.866);
+  font-size: 2rem;
+  text-align: center;
+}
+
+button {
+  font-family: 'Cherry Swash', cursive;
+  font-weight: bold;
+  background-color: rgba(179, 234, 232, 0.837);
+  font-size: 1.6rem;
+  text-align: center;
+  border-radius: 20%;
+}
+
+button :hover {
+  cursor: pointer;
+  background-color: rgba(89, 51, 241, 0.837);
+}
+
+/* The popup form - hidden by default */
+/* .form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+/* .form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  text-align: center;
+} */
+
+/* Add a red background color to the cancel button */
+/* .form-container .cancel {
+  background-color: rgba(226, 82, 82, 0.679);
+/* } */ 

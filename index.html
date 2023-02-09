@@ -2,84 +2,169 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Play Piano</title>
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com"
-          crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap"
-          rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://fav.farm/🔥" />
+       <meta charset="UTF-8">
+       <title>Play Piano</title>
+       <link rel="preconnect"
+             href="https://fonts.googleapis.com">
+       <link rel="preconnect"
+             href="https://fonts.gstatic.com" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+             rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap"
+             rel="stylesheet">
+       <link rel="stylesheet" href="style.css">
+       <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 
 <body>
-    <h1>Play Piano</h1>
-    <!-- css taken from: https://codepen.io/zastrow/pen/kxdYdk -->
-    <container>
+       <h1>Play Piano</h1>
+       <!-- css taken from: https://codepen.io/zastrow/pen/kxdYdk -->
+       <container>
 
-        <ul class="set">
-            <li class="white c key" data-key="67"></li>
-            <li class="black cs key" data-key="49"></li>
-            <li class="white d key" data-key="68"></li>
-            <li class="black ds key" data-key="50"></li>
-            <li class="white e key" data-key="69"></li>
-            <li class="white f key" data-key="70"></li>
-            <li class="black fs key" data-key="51"></li>
-            <li class="white g key" data-key="71"></li>
-            <li class="black gs key" data-key="52"></li>
-            <li class="white a key" data-key="65"></li>
-            <li class="black as key" data-key="53"></li>
-            <li class="white b key" data-key="66"></li>
-        </ul>
+              <ul class="set">
+                     <li class="white c key" data-key="67">
+                     </li>
+                     <li class="black cs key" data-key="49">
+                     </li>
+                     <li class="white d key" data-key="68">
+                     </li>
+                     <li class="black ds key" data-key="50">
+                     </li>
+                     <li class="white e key" data-key="69">
+                     </li>
+                     <li class="white f key" data-key="70">
+                     </li>
+                     <li class="black fs key" data-key="51">
+                     </li>
+                     <li class="white g key" data-key="71">
+                     </li>
+                     <li class="black gs key" data-key="52">
+                     </li>
+                     <li class="white a key" data-key="65">
+                     </li>
+                     <li class="black as key" data-key="53">
+                     </li>
+                     <li class="white b key" data-key="66">
+                     </li>
+              </ul>
 
-    </container>
+       </container>
 
-    <div id="rules">To play, either click on the note on the
-        keyboard
-        above, or press one the following keys on your
-        keyboard: <br> C for the C note, 1 for C#, D for D,
-        2 for
-        D#, E for E, F for F, 3 for F#, G for G, 4 for G#, A
-        for A, 5 for A#, B for B.</div>
+       <div id="rules">To play, either click on the note on
+              the
+              keyboard
+              above, or press one the following keys on your
+              keyboard: <br> C for the C note, 1 for C#, D
+              for D,
+              2 for
+              D#, E for E, F for F, 3 for F#, G for G, 4 for
+              G#, A
+              for A, 5 for A#, B for B.</div>
+       <br>
+       <div id="gameRules">
+              <p>For a challenge, click on the
+                     button and try and recognize the notes
+                     that
+                     will be played.</p>
+              <button id="gameButton"
+                      onclick="openForm()">Click me</button>
+       </div>
 
-    <figure>
-        <img src="keys_notes.jpg" alt="notes_description"
-             style="width:10%">
-        <figcaption>Notes chart</figcaption>
-    </figure>
+       <!-- <div class="form-popup" id="myForm">
+              <form action="/action_page.php"
+                    class="form-container">
+                     <h1>Which notes are playing?</h1>
+                     <h3>First Note:</h3>
+                     <label class="radio-inline" id="C">
+                            <input type="radio"
+                                   name="optradio" checked>C
+                     </label>
+                     <label class="radio-inline" id="C#">
+                            <input type="radio"
+                                   name="optradio">C#
+                     </label>
+                     <label class="radio-inline" id="D">
+                            <input type="radio"
+                                   name="optradio">D
+                     </label>
+                     <label class="radio-inline" id="D#">
+                            <input type="radio"
+                                   name="optradio">D#
+                     </label>
+                     <label class="radio-inline" id="E">
+                            <input type="radio"
+                                   name="optradio">E
+                     </label>
+                     <label class="radio-inline" id="F">
+                            <input type="radio"
+                                   name="optradio">F
+                     </label>
+                     <label class="radio-inline" id="F#">
+                            <input type="radio"
+                                   name="optradio">F#
+                     </label>
+                     <label class="radio-inline" id="G">
+                            <input type="radio"
+                                   name="optradio">G
+                     </label>
+                     <label class="radio-inline" id="G#">
+                            <input type="radio"
+                                   name="optradio">G#
+                     </label>
+                     <label class="radio-inline" id="A">
+                            <input type="radio"
+                                   name="optradio">A
+                     </label>
+                     <label class="radio-inline" id="A#">
+                            <input type="radio"
+                                   name="optradio">A#
+                     </label>
+                     <label class="radio-inline" id="B">
+                            <input type="radio"
+                                   name="optradio">B
+                     </label>
 
-    <audio class="white c key" data-key="67"
-           src="sounds/notes_C.mp3"></audio>
-    <audio class="black cs key" data-key="49"
-           src="sounds/notes_Cs.mp3"></audio>
-    <audio class="white d key" data-key="68"
-           src="sounds/notes_D.mp3"></audio>
-    <audio class="black ds key" data-key="50"
-           src="sounds/notes_Ds.mp3"></audio>
-    <audio class="white e key" data-key="69"
-           src="sounds/notes_E.mp3"></audio>
-    <audio class="white f key" data-key="70"
-           src="sounds/notes_F.mp3"></audio>
-    <audio class="black fs key" data-key="51"
-           src="sounds/notes_Fs.mp3"></audio>
-    <audio class="white g key" data-key="71"
-           src="sounds/notes_G.mp3"></audio>
-    <audio class="black gs key" data-key="52"
-           src="sounds/notes_Gs.mp3"></audio>
-    <audio class="white a key" data-key="65"
-           src="sounds/notes_A.mp3"></audio>
-    <audio class="black as key" data-key="53"
-           src="sounds/notes_As.mp3"></audio>
-    <audio class="white b key" data-key="66"
-           src="sounds/notes_B.mp3"></audio>
+                     <button type="button"
+                             class="btn cancel"
+                             onclick="closeForm()">Close</button>
+              </form>
+       </div> -->
+
+       <figure>
+              <img src="keys_notes.jpg"
+                   alt="notes_description"
+                   style="width:10%">
+              <figcaption>Notes chart</figcaption>
+       </figure>
+
+       <audio class="white c key" data-key="67" id="C"
+              src="sounds/notes_C.mp3"></audio>
+       <audio class="black cs key" data-key="49" id="C#"
+              src="sounds/notes_Cs.mp3"></audio>
+       <audio class="white d key" data-key="68" id="D"
+              src="sounds/notes_D.mp3"></audio>
+       <audio class="black ds key" data-key="50" id="D#"
+              src="sounds/notes_Ds.mp3"></audio>
+       <audio class="white e key" data-key="69" id="E"
+              src="sounds/notes_E.mp3"></audio>
+       <audio class="white f key" data-key="70" id="F"
+              src="sounds/notes_F.mp3"></audio>
+       <audio class="black fs key" data-key="51" id="F#"
+              src="sounds/notes_Fs.mp3"></audio>
+       <audio class="white g key" data-key="71" id="G"
+              src="sounds/notes_G.mp3"></audio>
+       <audio class="black gs key" data-key="52" id="G#"
+              src="sounds/notes_Gs.mp3"></audio>
+       <audio class="white a key" data-key="65" id="A"
+              src="sounds/notes_A.mp3"></audio>
+       <audio class="black as key" data-key="53" id="A#"
+              src="sounds/notes_As.mp3"></audio>
+       <audio class="white b key" data-key="66" id="B"
+              src="sounds/notes_B.mp3"></audio>
 
 
-    <script src="app.js">
-    </script>
+       <script src="app.js">
+       </script>
 
 
 </body>

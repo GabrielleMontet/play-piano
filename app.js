@@ -27,11 +27,38 @@ function onKeyUp(e) {
 }
 window.addEventListener('keyup', onKeyUp);
 
-//function to listen to key clicked on, and play the corresponding note
-document.querySelector(".key").addEventListener("click", playSoundOnClick);
+//function to listen to key clicked on, and play the corresponding note by selecting the audio file that has the same class as the key that was clicked on
 
 function playSoundOnClick(e) {
   const audio = document.querySelector(`audio[class="${e.target.className}"]`);
+  console.log(audio);
   audio.play();
 }
 window.addEventListener('click', playSoundOnClick);
+
+//functions to play the 'note recognition' game 
+const notesList = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+
+function randomNotes() {
+  for (let i=1; i<=4; i++) {
+  setTimeout(playNote, 2000*i);
+}
+}
+
+function playNote() {
+  let index = Math.floor(Math.random() * 100) % notesList.length;
+  let id = notesList[index];
+  console.log(id);
+  let audioElement = document.getElementById(id);
+  audioElement.play();
+}
+let gameButton = document.getElementById("gameButton");
+gameButton.addEventListener('click', randomNotes);
+
+//functions to open and close the game form
+// function openForm() {
+//   document.getElementById("myForm").style.display = "block";
+// }
+// function closeForm() {
+//   document.getElementById("myForm").style.display = "none";
+// }
