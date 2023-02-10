@@ -31,13 +31,13 @@ window.addEventListener('keyup', onKeyUp);
 
 function playSoundOnClick(e) {
   const audio = document.querySelector(`audio[class="${e.target.className}"]`);
-  console.log(audio);
   audio.play();
 }
 window.addEventListener('click', playSoundOnClick);
 
 //functions to play the 'note recognition' game 
 const notesList = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+let notesPlayed = [];
 
 function randomNotes() {
   for (let i=1; i<=4; i++) {
@@ -48,17 +48,69 @@ function randomNotes() {
 function playNote() {
   let index = Math.floor(Math.random() * 100) % notesList.length;
   let id = notesList[index];
-  console.log(id);
   let audioElement = document.getElementById(id);
+  notesPlayed.push(id);
   audioElement.play();
 }
 let gameButton = document.getElementById("gameButton");
 gameButton.addEventListener('click', randomNotes);
 
-//functions to open and close the game form
-// function openForm() {
-//   document.getElementById("myForm").style.display = "block";
-// }
-// function closeForm() {
-//   document.getElementById("myForm").style.display = "none";
-// }
+// functions to open and close the game form
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+//check if the notes have been correctly recognised
+let resultButton = document.getElementById("resultButton");
+resultButton.addEventListener('click', checkResult);
+function checkResult() {
+  let radioButtonsNote1 = document.querySelectorAll('input[name="note1"]');
+  let radioButtonsNote2 = document.querySelectorAll('input[name="note2"]');
+  let radioButtonsNote3 = document.querySelectorAll('input[name="note3"]');
+  let radioButtonsNote4 = document.querySelectorAll('input[name="note4"]');
+  let pointsCount = 0;
+    //check first note
+  for (const radioButton of radioButtonsNote1) {
+      if (radioButton.checked) {
+          let selectedNote1 = radioButton.value;
+          if (selectedNote1 == notesPlayed[0]) {
+            pointsCount = pointsCount + 1;
+          }
+          break;
+      }
+    }
+    //check second note
+    for (const radioButton of radioButtonsNote2) {
+      if (radioButton.checked) {
+        let selectedNote2 = radioButton.value;
+        if (selectedNote2 == notesPlayed[1]) {
+          pointsCount = pointsCount + 1;
+        }
+          break;
+      }
+  }
+    //check third note
+    for (const radioButton of radioButtonsNote3) {
+      if (radioButton.checked) {
+          let selectedNote3 = radioButton.value;
+          if (selectedNote3 == notesPlayed[2]) {
+            pointsCount = pointsCount + 1;
+          }
+          break;
+      }
+  }
+    //check fourth note
+    for (const radioButton of radioButtonsNote4) {
+      if (radioButton.checked) {
+          let selectedNote4 = radioButton.value;
+          if (selectedNote4 == notesPlayed[3]) {
+            pointsCount = pointsCount + 1;
+          }
+          break;
+      }
+  }
+  output.innerText = `You got ${pointsCount} note(s) right`;
+}
