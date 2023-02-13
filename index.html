@@ -14,285 +14,417 @@
              rel="stylesheet">
        <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
              rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather&family=Ubuntu:wght@300;400&display=swap"
+             rel="stylesheet">
        <link rel="stylesheet" href="style.css">
        <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 
 <body>
-       <h1>Play Piano</h1>
        <!-- css taken from: https://codepen.io/zastrow/pen/kxdYdk -->
-       <container>
-
-              <ul class="set">
-                     <li class="white c key" data-key="67">
-                     </li>
-                     <li class="black cs key" data-key="49">
-                     </li>
-                     <li class="white d key" data-key="68">
-                     </li>
-                     <li class="black ds key" data-key="50">
-                     </li>
-                     <li class="white e key" data-key="69">
-                     </li>
-                     <li class="white f key" data-key="70">
-                     </li>
-                     <li class="black fs key" data-key="51">
-                     </li>
-                     <li class="white g key" data-key="71">
-                     </li>
-                     <li class="black gs key" data-key="52">
-                     </li>
-                     <li class="white a key" data-key="65">
-                     </li>
-                     <li class="black as key" data-key="53">
-                     </li>
-                     <li class="white b key" data-key="66">
-                     </li>
-              </ul>
-
-       </container>
-
-       <div id="rules">To play, either click on the note on
-              the
-              keyboard
-              above, or press one the following keys on your
-              keyboard: <br> C for the C note, 1 for C#, D
-              for D,
-              2 for
-              D#, E for E, F for F, 3 for F#, G for G, 4 for
-              G#, A
-              for A, 5 for A#, B for B.</div>
-       <br>
-       <div id="gameRules">
-              <p>For a challenge, click on the
-                     button and try and recognize the 4
-                     notes
-                     that
-                     will be played.</p>
-              <button id="gameButton"
-                      onclick="openForm()">Click me</button>
+       <div class="header">
+              <h1>Play Piano</h1>
        </div>
 
-       <div class="form-popup" id="myForm">
-              <form action="/action_page.php"
-                    class="form-container">
-                     <h2>Which notes are playing?</h2>
-                     <h3>First Note:</h3>
-                     <label class="radio-inline" id="1C">
-                            <input type="radio" value="C"
-                                   name="note1" checked>C
-                     </label>
-                     <label class="radio-inline" id="1C#">
-                            <input type="radio" value="C#"
-                                   name="note1">C#
-                     </label>
-                     <label class="radio-inline" id="1D">
-                            <input type="radio" value="D"
-                                   name="note1">D
-                     </label>
-                     <label class="radio-inline" id="1D#">
-                            <input type="radio" value="D#"
-                                   name="note1">D#
-                     </label>
-                     <label class="radio-inline" id="1E">
-                            <input type="radio" value="E"
-                                   name="note1">E
-                     </label>
-                     <label class="radio-inline" id="1F">
-                            <input type="radio" value="F"
-                                   name="note1">F
-                     </label>
-                     <label class="radio-inline" id="1F#">
-                            <input type="radio" value="F#"
-                                   name="note1">F#
-                     </label>
-                     <label class="radio-inline" id="1G">
-                            <input type="radio" value="G"
-                                   name="note1">G
-                     </label>
-                     <label class="radio-inline" id="1G#">
-                            <input type="radio" value="G#"
-                                   name="note1">G#
-                     </label>
-                     <label class="radio-inline" id="1A">
-                            <input type="radio" value="A"
-                                   name="note1">A
-                     </label>
-                     <label class="radio-inline" id="1A#">
-                            <input type="radio" value="A#"
-                                   name="note1">A#
-                     </label>
-                     <label class="radio-inline" id="1B">
-                            <input type="radio" value="B"
-                                   name="note1">B
-                     </label>
+       <div class="row">
+              <div class="column side">
+                     <figure>
+                            <img src="keys_notes.jpg"
+                                 alt="notes_description"
+                                 style="width:60%">
+                            <figcaption>Notes chart
+                            </figcaption>
+                     </figure>
+              </div>
+              <div class="column middle">
+                     <container>
 
-                     <h3>Second Note:</h3>
-                     <label class="radio-inline" id="2C">
-                            <input type="radio" name="note2"
-                                   value="C" checked>C
-                     </label>
-                     <label class="radio-inline" id="2C#">
-                            <input type="radio" name="note2"
-                                   value="C#">C#
-                     </label>
-                     <label class="radio-inline" id="2D">
-                            <input type="radio" name="note2"
-                                   value="D">D
-                     </label>
-                     <label class="radio-inline" id="2D#">
-                            <input type="radio" name="note2"
-                                   value="D#">D#
-                     </label>
-                     <label class="radio-inline" id="2E">
-                            <input type="radio" name="note2"
-                                   value="E">E
-                     </label>
-                     <label class="radio-inline" id="2F">
-                            <input type="radio" name="note2"
-                                   value="F">F
-                     </label>
-                     <label class="radio-inline" id="2F#">
-                            <input type="radio" name="note2"
-                                   value="F#">F#
-                     </label>
-                     <label class="radio-inline" id="2G">
-                            <input type="radio" name="note2"
-                                   value="G">G
-                     </label>
-                     <label class="radio-inline" id="2G#">
-                            <input type="radio" name="note2"
-                                   value="G#">G#
-                     </label>
-                     <label class="radio-inline" id="2A">
-                            <input type="radio" name="note2"
-                                   value="A">A
-                     </label>
-                     <label class="radio-inline" id="2A#">
-                            <input type="radio" name="note2"
-                                   value="A#">A#
-                     </label>
-                     <label class="radio-inline" id="2B">
-                            <input type="radio" name="note2"
-                                   value="B">B
-                     </label>
+                            <ul class="set">
+                                   <li class="white c key"
+                                       data-key="67">
+                                   </li>
+                                   <li class="black cs key"
+                                       data-key="49">
+                                   </li>
+                                   <li class="white d key"
+                                       data-key="68">
+                                   </li>
+                                   <li class="black ds key"
+                                       data-key="50">
+                                   </li>
+                                   <li class="white e key"
+                                       data-key="69">
+                                   </li>
+                                   <li class="white f key"
+                                       data-key="70">
+                                   </li>
+                                   <li class="black fs key"
+                                       data-key="51">
+                                   </li>
+                                   <li class="white g key"
+                                       data-key="71">
+                                   </li>
+                                   <li class="black gs key"
+                                       data-key="52">
+                                   </li>
+                                   <li class="white a key"
+                                       data-key="65">
+                                   </li>
+                                   <li class="black as key"
+                                       data-key="53">
+                                   </li>
+                                   <li class="white b key"
+                                       data-key="66">
+                                   </li>
+                            </ul>
 
-                     <h3>Third Note:</h3>
-                     <label class="radio-inline" id="3C">
-                            <input type="radio" name="note3"
-                                   value="C" checked>C
-                     </label>
-                     <label class="radio-inline" id="3C#">
-                            <input type="radio" name="note3"
-                                   value="C#">C#
-                     </label>
-                     <label class="radio-inline" id="3D">
-                            <input type="radio" name="note3"
-                                   value="D">D
-                     </label>
-                     <label class="radio-inline" id="3D#">
-                            <input type="radio" name="note3"
-                                   value="D#">D#
-                     </label>
-                     <label class="radio-inline" id="3E">
-                            <input type="radio" name="note3"
-                                   value="E">E
-                     </label>
-                     <label class="radio-inline" id="3F">
-                            <input type="radio" name="note3"
-                                   value="F">F
-                     </label>
-                     <label class="radio-inline" id="3F#">
-                            <input type="radio" name="note3"
-                                   value="F#">F#
-                     </label>
-                     <label class="radio-inline" id="3G">
-                            <input type="radio" name="note3"
-                                   value="G">G
-                     </label>
-                     <label class="radio-inline" id="3G#">
-                            <input type="radio" name="note3"
-                                   value="G#">G#
-                     </label>
-                     <label class="radio-inline" id="3A">
-                            <input type="radio" name="note3"
-                                   value="A">A
-                     </label>
-                     <label class="radio-inline" id="3A#">
-                            <input type="radio" name="note3"
-                                   value="A#">A#
-                     </label>
-                     <label class="radio-inline" id="3B">
-                            <input type="radio" name="note3"
-                                   value="B">B
-                     </label>
+                     </container>
 
-                     <h3>Fourth Note:</h3>
-                     <label class="radio-inline" id="4C">
-                            <input type="radio" name="note4"
-                                   value="C" checked>C
-                     </label>
-                     <label class="radio-inline" id="4C#">
-                            <input type="radio" name="note4"
-                                   value="C#">C#
-                     </label>
-                     <label class="radio-inline" id="4D">
-                            <input type="radio" name="note4"
-                                   value="D">D
-                     </label>
-                     <label class="radio-inline" id="4D#">
-                            <input type="radio" name="note4"
-                                   value="D#">D#
-                     </label>
-                     <label class="radio-inline" id="4E">
-                            <input type="radio" name="note4"
-                                   value="E">E
-                     </label>
-                     <label class="radio-inline" id="4F">
-                            <input type="radio" name="note4"
-                                   value="F">F
-                     </label>
-                     <label class="radio-inline" id="4F#">
-                            <input type="radio" name="note4"
-                                   value="F#">F#
-                     </label>
-                     <label class="radio-inline" id="4G">
-                            <input type="radio" name="note4"
-                                   value="G">G
-                     </label>
-                     <label class="radio-inline" id="4G#">
-                            <input type="radio" name="note4"
-                                   value="G#">G#
-                     </label>
-                     <label class="radio-inline" id="4A">
-                            <input type="radio" name="note4"
-                                   value="A">A
-                     </label>
-                     <label class="radio-inline" id="4A#">
-                            <input type="radio" name="note4"
-                                   value="A#">A#
-                     </label>
-                     <label class="radio-inline" id="4B">
-                            <input type="radio" name="note4"
-                                   value="B">B
-                     </label>
+                     <div id="rules">To play, either click
+                            on the note on
+                            the
+                            keyboard
+                            above, or press one the
+                            following keys on your
+                            keyboard: <br> C for the C note,
+                            1 for C#, D
+                            for D,
+                            2 for
+                            D#, E for E, F for F, 3 for F#,
+                            G for G, 4 for
+                            G#, A
+                            for A, 5 for A#, B for B.</div>
                      <br>
-                     <button type="button"
-                             id="resultButton">Check
-                            result</button>
-                     <p id="output"></p>
-                     <button type="button"
-                             class="btn cancel"
-                             onclick="closeForm()">Close</button>
-              </form>
+                     <div id="gameRules">
+                            <p>For a challenge, click on the
+                                   button and try and
+                                   recognize the 4
+                                   notes
+                                   that
+                                   will be played.</p>
+                            <button id="gameButton"
+                                    onclick="openForm()">Click
+                                   me</button>
+                     </div>
+              </div>
+              <div class="column side">
+                     <div class="form-popup" id="myForm">
+                            <form action="/action_page.php"
+                                  class="form-container">
+                                   <h2>Which notes are
+                                          playing?</h2>
+                                   <a class="close"
+                                      href="index.html">×</a>
+                                   <h3>First Note:</h3>
+                                   <label class="radio-inline"
+                                          id="1C">
+                                          <input type="radio"
+                                                 value="C"
+                                                 name="note1"
+                                                 checked>C
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1C#">
+                                          <input type="radio"
+                                                 value="C#"
+                                                 name="note1">C#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1D">
+                                          <input type="radio"
+                                                 value="D"
+                                                 name="note1">D
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1D#">
+                                          <input type="radio"
+                                                 value="D#"
+                                                 name="note1">D#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1E">
+                                          <input type="radio"
+                                                 value="E"
+                                                 name="note1">E
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1F">
+                                          <input type="radio"
+                                                 value="F"
+                                                 name="note1">F
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1F#">
+                                          <input type="radio"
+                                                 value="F#"
+                                                 name="note1">F#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1G">
+                                          <input type="radio"
+                                                 value="G"
+                                                 name="note1">G
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1G#">
+                                          <input type="radio"
+                                                 value="G#"
+                                                 name="note1">G#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1A">
+                                          <input type="radio"
+                                                 value="A"
+                                                 name="note1">A
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1A#">
+                                          <input type="radio"
+                                                 value="A#"
+                                                 name="note1">A#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="1B">
+                                          <input type="radio"
+                                                 value="B"
+                                                 name="note1">B
+                                   </label>
+
+                                   <h3>Second Note:</h3>
+                                   <label class="radio-inline"
+                                          id="2C">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="C"
+                                                 checked>C
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2C#">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="C#">C#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2D">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="D">D
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2D#">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="D#">D#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2E">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="E">E
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2F">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="F">F
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2F#">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="F#">F#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2G">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="G">G
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2G#">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="G#">G#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2A">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="A">A
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2A#">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="A#">A#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="2B">
+                                          <input type="radio"
+                                                 name="note2"
+                                                 value="B">B
+                                   </label>
+
+                                   <h3>Third Note:</h3>
+                                   <label class="radio-inline"
+                                          id="3C">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="C"
+                                                 checked>C
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3C#">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="C#">C#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3D">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="D">D
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3D#">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="D#">D#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3E">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="E">E
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3F">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="F">F
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3F#">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="F#">F#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3G">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="G">G
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3G#">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="G#">G#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3A">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="A">A
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3A#">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="A#">A#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="3B">
+                                          <input type="radio"
+                                                 name="note3"
+                                                 value="B">B
+                                   </label>
+
+                                   <h3>Fourth Note:</h3>
+                                   <label class="radio-inline"
+                                          id="4C">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="C"
+                                                 checked>C
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4C#">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="C#">C#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4D">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="D">D
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4D#">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="D#">D#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4E">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="E">E
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4F">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="F">F
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4F#">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="F#">F#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4G">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="G">G
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4G#">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="G#">G#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4A">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="A">A
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4A#">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="A#">A#
+                                   </label>
+                                   <label class="radio-inline"
+                                          id="4B">
+                                          <input type="radio"
+                                                 name="note4"
+                                                 value="B">B
+                                   </label>
+                                   <br>
+                                   <button type="button"
+                                           id="resultButton">Check
+                                          result</button>
+                                   <p id="output"></p>
+                            </form>
+                     </div>
+              </div>
        </div>
 
-       <figure>
-              <img src="keys_notes.jpg"
-                   alt="notes_description"
-                   style="width:10%">
-              <figcaption>Notes chart</figcaption>
-       </figure>
+
 
        <audio class="white c key" data-key="67" id="C"
               src="sounds/notes_C.mp3"></audio>

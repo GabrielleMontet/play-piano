@@ -1,4 +1,4 @@
-*, *:before, *:after {
+* {
   box-sizing: border-box;
 }
 
@@ -7,11 +7,45 @@ body {
   background:rgb(55, 56, 58);
 }
 
-h1 {
-  font-size: 5rem;
+.header {
   color:rgba(179, 234, 232, 0.837);
+  padding: 15px;
   text-align: center;
+  font-size: 35px;
   font-family: 'Dancing Script', cursive;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+   -webkit-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+}
+
+/* Middle column */
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
 }
 
 ul {
@@ -121,47 +155,114 @@ figcaption {
   text-align: center;
 }
 
-button {
-  font-family: 'Cherry Swash', cursive;
-  font-weight: bold;
-  background-color: rgba(179, 234, 232, 0.837);
-  font-size: 1.6rem;
-  text-align: center;
-  border-radius: 20%;
+#gameButton, #resultButton {
+  appearance: button;
+  background-color: #4D4AE8;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
+  border: 1px solid #4D4AE8;
+  border-radius: 1rem;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
   margin: 2rem;
+  padding: .5rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
 }
 
-button :hover {
-  cursor: pointer;
-  background-color: rgba(89, 51, 241, 0.837);
+#gameButton:focus:not(:focus-visible),
+#gameButton:focus {
+  outline: 0;
+}
+
+#resultButton:focus:not(:focus-visible),
+#resultButton:focus {
+  outline: 0;
+}
+
+#gameButton:hover, #resultButton:hover {
+  background-color: #3733E5;
+  border-color: #3733E5;
+}
+
+#gameButton:focus, #resultButton:focus {
+  background-color: #413FC5;
+  border-color: #3E3BBA;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+#gameButton:active, #resultButton:active {
+  background-color: #3E3BBA;
+  background-image: none;
+  border-color: #3A38AE;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+#gameButton:active:focus, #resultButton:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
+}
+
+#gameButton:disabled, #resultButton:disabled {
+  background-image: none;
+  box-shadow: none;
+  opacity: .65;
+  pointer-events: none;
 }
 
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid;
-  border-radius: 10%;
-  z-index: 9;
+  position:absolute;
+  top:25%;
+  left:80%;
+  border: 7px dotted rgba(64, 33, 187, 0.853);;
 }
 
 /* Add styles to the form container */
 .form-container {
   max-width: 300px;
   padding: 10px;
-  background-color: white;
-  border-radius: 10%;
+  background-color: rgba(179, 234, 232, 0.837);
   text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  color:rgba(64, 33, 187, 0.853);
 } 
 
-.form-container .cancel {
-  background-color: rgba(226, 82, 82, 0.679);
+.form-container h2 {
+  padding-top: 2rem;
+}
+
+.form-container h3, label {
+  font-size: 1.3rem;
 }
 
 #output {
-  font-family: 'Merriweather', serif;
-  font-size: small;
+  font-size: 1.5rem;
   color:rgba(64, 33, 187, 0.853);
+}
+
+.form-popup .close { 
+  position: absolute; 
+  top: 20px; 
+  right: 30px; 
+  transition: all 200ms;
+  font-size: 30px; 
+  font-weight: bold; 
+  text-decoration: none; 
+  color: #333;
+}
+
+.form-popup .close:hover { 
+  color:rgba(226, 82, 82, 0.679);
 }
