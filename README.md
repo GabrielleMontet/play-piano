@@ -3,7 +3,7 @@
 <h2>Project Description</h2>
 
 -- Personal project --
-This is a piano which can be played either by clicking on the keys or by pressing keys on your keyboard.
+This is a piano which can be played either by clicking on the keys or by pressing keys on your keyboard. You can also play a note recognition game, where 4 notes are played at random and you need to try and recognise those notes.
 
 <h2>Sources I used, and what I did/added</h2>
 
@@ -16,7 +16,9 @@ My JavaScript code was inspired by Wes Bos's JavaScript 30's <a href="https://gi
 <li>Added an event listener function for 'on click' event to play the note once a key has been clicked on</li>
 <li>Created "whitePlaying" and "blackPlaying" classes for keys that had been pushed (via the keyboard), and added the corresponding CSS</li>
 <li>Created a function to remove this "whitePlaying"/"blackPlaying" classes and corresponding styling, upon 'key up' event.</li>
-<li>Added a description test and a notes chart image.</li></ul>
+<li>Added a description test and a notes chart image.</li>
+<li>Added a pop-up form to play a note recognition game.</li>
+<li>Created functions to play 4 notes at random, and then check the user's input to see if the notes selected by the users correspond to the ones that were played.</li></ul>
 
 <h2>Tech used</h2>
 
