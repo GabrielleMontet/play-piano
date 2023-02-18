@@ -226,7 +226,6 @@ figcaption {
   position:absolute;
   top:25%;
   left:80%;
-  border: 7px dotted rgba(64, 33, 187, 0.853);;
 }
 
 /* Add styles to the form container */
@@ -237,6 +236,8 @@ figcaption {
   text-align: center;
   font-family: 'Ubuntu', sans-serif;
   color:rgba(64, 33, 187, 0.853);
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
 } 
 
 .form-container h2 {
